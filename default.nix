@@ -69,5 +69,5 @@ in {
   broken-xserver-disabled = buildHypervImage "broken-no-x" brokenNixpkgs ({lib, ...}: {services.xserver.enable = lib.mkForce false;});
   fixed = buildHypervImage "fixed" fixedNixpkgs {};
   fixed-xserver-disabled = buildHypervImage "fixed-no-x" fixedNixpkgs ({lib, ...}: {services.xserver.enable = lib.mkForce false;});
-  fixed-kernel-6_12 = buildHypervImage "fixed" fixedNixpkgs ({pkgs, ...}: {boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;});
+  fixed-kernel-6_12 = buildHypervImage "fixed-plus-new-kernel" fixedNixpkgs ({pkgs, ...}: {boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;});
 }
